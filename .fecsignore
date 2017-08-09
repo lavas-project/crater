@@ -1,0 +1,8 @@
+node_modules
+logs
+dist
+demo
+test
+.tmp
+npm-debug.log
+debug.js

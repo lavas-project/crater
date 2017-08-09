@@ -1,0 +1,57 @@
+{
+  "name": "sfe-sw",
+  "version": "0.0.1",
+  "description": "generate service-worker.js for baidu search",
+  "main": "index.js",
+  "scripts": {
+    "start": "node build/build.js",
+    "build": "node build/build.js",
+    "validate": "node build/validate/index.js",
+    "test": "NODE_ENV=testing node build/build.js && node ./test/helpers/download-browsers.js && mocha",
+    "lint": "node ./node_modules/fecs/bin/fecs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://wangyisheng@icode.baidu.com:8235/baidu/sfe/sw"
+  },
+  "keywords": [
+    "service-worker",
+    "baidu",
+    "search"
+  ],
+  "author": "wangyisheng",
+  "license": "ISC",
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "dependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "chalk": "^2.0.1",
+    "glob": "^7.1.2",
+    "ora": "^1.3.0",
+    "rimraf": "^2.6.1",
+    "semver": "^5.3.0",
+    "serviceworker-cache-polyfill": "^4.0.0",
+    "shelljs": "^0.7.8",
+    "webpack": "^2.7.0"
+  },
+  "devDependencies": {
+    "express": "^4.15.3",
+    "fecs": "^1.4.0",
+    "chai": "^3.4.1",
+    "chromedriver": "^2.28.0",
+    "geckodriver": "1.6.1",
+    "cookie-parser": "^1.4.1",
+    "mocha": "^3.2.0",
+    "selenium-assistant": "^5.0.4",
+    "sw-testing-helpers": "^1.0.2"
+  }
+}

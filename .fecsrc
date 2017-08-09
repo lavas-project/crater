@@ -1,0 +1,11 @@
+{
+    "eslint": {
+        "globals": {
+            "console": true
+        },
+
+        "rules": {
+            "no-console": 0
+        }
+    }
+}

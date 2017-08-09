@@ -1,0 +1,1 @@
+console.log('cache new new2.js')

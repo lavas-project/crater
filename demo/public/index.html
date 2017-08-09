@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+    <head>
+        <meta charset="utf-8">
+        <title>sw test</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    </head>
+    <link rel="stylesheet" href="/news/static/main.css">
+    <style>
+        #app {
+            font-size: 18px;
+            text-align: center;
+        }
+    </style>
+    <body>
+        <div id="app">
+            <h1>Page Content</h1>
+            <h2>Test Service Worker</h2>
+        </div>
+    </body>
+    <!-- <script src="/news/static/fastest.js"></script>
+    <script src="/news/static/cache.js"></script>
+    <script src="/news/static/cache.1.js"></script>
+    <script src="/news/static/cache.2.js"></script>
+    <script src="/news/static/cache.3.js"></script>
+    <script src="/news/static/cache.4.js"></script>
+    <script src="/news/static/cache.5.js"></script>
+    <script src="/news/static/cache.6.js"></script>
+    <script src="/news/static/cache.7.js"></script>
+    <script src="/news/static/cache.8.js"></script>
+    <script src="/news/static/cache.9.js"></script>
+    <script src="/news/static/cache.10.js"></script>
+    <script src="/news/static/a.js"></script>
+    <script src="/news/static/b.js"></script>
+    <script src="/news/static/c.js"></script>
+    <script src="/news/static/jquery.js"></script>
+
+    <script src="/test/data/files/text-1.js"></script>
+    <script src="/test/data/files/text-2.js"></script>
+    <script src="/test/data/files/text-3.js"></script>
+    <script src="/test/data/files/text-4.js"></script> -->
+
+    <script>
+        if ('serviceWorker' in navigator) {
+
+            navigator.serviceWorker.register(
+                '/service-worker.js',
+                {scope: '/'}
+            )
+            .then(function (registration) {
+                console.log('ServiceWorker registered successfully with scope: ', registration.scope);
+            })
+            .catch(function (err) {
+                console.log('ServiceWorker registration failed: ', err);
+            });
+        }
+
+        $(function () {
+            $.post('/test/data/files/text-1.txt', {}, function (response) {
+                console.log(response);
+            })
+        });
+    </script>
+</html>
