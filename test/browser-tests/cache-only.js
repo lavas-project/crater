@@ -11,7 +11,7 @@ describe('Test cacheOnly', function () {
     const swUtils = window.goog.swUtils;
     const SW_FILE_PATH = '/dist/service-worker.js';
     const REQUEST_PATH = '/test/data/files/cacheOnly.txt';
-    const CACHE_NAME = '@sfe-sw-test@';
+    const CACHE_NAME = '@sw-test@';
 
     it('should return nothing from the empty cache', function () {
         return swUtils.activateSW(SW_FILE_PATH)

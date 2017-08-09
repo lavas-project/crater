@@ -10,7 +10,7 @@
 describe('Test fastest', function() {
     const swUtils = window.goog.swUtils;
     const SW_FILE_PATH = '/dist/service-worker.js';
-    const CACHE_NAME = '@sfe-sw-test@';
+    const CACHE_NAME = '@sw-test@';
     const REQUEST_PATH = '/test/data/files/fastest.txt';
     const ORIGIN_CONTENT = 'Origin content from fastest';
     const MODIFI_CONTENT = 'Modification content from testing';

@@ -11,7 +11,7 @@
 describe('Test precache', function() {
     const swUtils = window.goog.swUtils;
     const SW_FILE_PATH = '/dist/service-worker.js';
-    const CACHE_NAME = '@sfe-sw-precache@';
+    const CACHE_NAME = '@sw-precache@';
 
     let compareCachedAssets = (assetList, cachedAssets) => {
         return new Promise((resolve, reject) => {

@@ -9,7 +9,7 @@
 describe('Test Options Parameters', function() {
     const swUtils = window.goog.swUtils;
     const SW_FILE_PATH = '/dist/service-worker.js';
-    const CACHE_NAME = '@sfe-sw-test@';
+    const CACHE_NAME = '@sw-test@';
 
     /**
     * Prepends a common prefix to several partial URLs, and returns the absolute URLs.

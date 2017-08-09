@@ -9,7 +9,7 @@ import sw from './lib/sw-base';
 import product from './product';
 
 function getCacheName(config) {
-    return `@sfe-sw-${config.name}@`;
+    return `@sw-${config.name}@`;
 }
 
 function addRoute(config) {

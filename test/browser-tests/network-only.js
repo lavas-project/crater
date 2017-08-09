@@ -9,7 +9,7 @@
 describe('Test networkOnly', function() {
     const swUtils = window.goog.swUtils;
     const SW_FILE_PATH = '/dist/service-worker.js';
-    const CACHE_NAME = '@sfe-sw-test@';
+    const CACHE_NAME = '@sw-test@';
     const REQUEST_PATH = '/test/data/files/networkOnly.txt';
 
     it('should retrieve the first value from the network and not put anything in the cache', function() {
