@@ -33,7 +33,7 @@
   ],
   "license": "Apache-2.0",
   "engines": {
-    "node": ">= 4.0.0",
+    "node": ">= 5.0.0",
     "npm": ">= 3.0.0"
   },
   "dependencies": {
