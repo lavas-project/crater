@@ -1,6 +1,6 @@
 /**
  * @file 基于sw-toolbox修改的cache-first单测
- * @author wangyisheng@baidu.com (wangyisheng)
+ * @author wangyisheng@outlook.com (wangyisheng)
  */
 
 /* eslint-env browser, mocha */

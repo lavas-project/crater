@@ -1,6 +1,6 @@
 /**
  * @file 主入口
- * @author wangyisheng@baidu.com (wangyisheng)
+ * @author wangyisheng@outlook.com (wangyisheng)
  */
 
 'use strict';

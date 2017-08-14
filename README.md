@@ -4,7 +4,6 @@
 
 sw 为站点提供 service-worker 支持，用以缓存 js, css 等静态文件，提升 WEB 页面访问速度，符合 PWA 渐进的思想，从而提升用户体验。
 
-
 ## 运行方式
 
 sw 会生成一份 `service-worker.js` 提供给 WEB 站点。其中包含每个垂类(产品)各自的配置，告诉 `service-worker.js` 应该对__哪些静态资源__以__何种策略__进行缓存，此外也包括一些配置参数。不同产品之间由 `request.referrer` 进行区分，防止互相干扰。

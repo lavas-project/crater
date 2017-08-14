@@ -408,7 +408,7 @@ $export.P = 8;   // proto
 $export.B = 16;  // bind
 $export.W = 32;  // wrap
 $export.U = 64;  // safe
-$export.R = 128; // real proto method for `library` 
+$export.R = 128; // real proto method for `library`
 module.exports = $export;
 
 /***/ }),
@@ -1265,7 +1265,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__test_product_precache_conf__ = __webpack_require__(103);
 /**
  * @file 测试入口
- * @author wangyisheng@baidu.com (wangyisheng)
+ * @author wangyisheng@outlook.com (wangyisheng)
  */
 
 
@@ -3058,7 +3058,7 @@ __webpack_require__(31)('observable');
 "use strict";
 /**
  * @file 测试预缓存的配置文件
- * @author wangyisheng@baidu.com (wangyisheng)
+ * @author wangyisheng@outlook.com (wangyisheng)
  */
 
 
@@ -3085,7 +3085,7 @@ __webpack_require__(31)('observable');
 "use strict";
 /**
  * @file 测试策略和路由规则的配置文件
- * @author wangyisheng@baidu.com (wangyisheng)
+ * @author wangyisheng@outlook.com (wangyisheng)
  * @author chenqiushi@baidu.com (chenqiushi)
  */
 

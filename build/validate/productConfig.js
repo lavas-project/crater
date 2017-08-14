@@ -1,6 +1,6 @@
 /**
  * @file 测试conf文件是否有重叠
- * @author wangyisheng@baidu.com (wangyisheng)
+ * @author wangyisheng@outlook.com (wangyisheng)
  */
 
 'use strict';

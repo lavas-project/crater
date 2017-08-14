@@ -1,6 +1,6 @@
 /**
  * @file 构建配置文件
- * @author wangyisheng@baidu.com (wangyisheng)
+ * @author wangyisheng@outlook.com (wangyisheng)
  */
 
 var path = require('path');

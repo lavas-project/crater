@@ -1,6 +1,6 @@
 /**
  * @file 测试预缓存的配置文件
- * @author wangyisheng@baidu.com (wangyisheng)
+ * @author wangyisheng@outlook.com (wangyisheng)
  */
 
 'use strict';

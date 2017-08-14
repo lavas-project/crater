@@ -1,6 +1,6 @@
 /**
  * @file build entry
- * @author wangyisheng@baidu.com (wangyisheng)
+ * @author wangyisheng@outlook.com (wangyisheng)
  */
 
 /* eslint-disable no-console */
