@@ -9,7 +9,7 @@ import sw from './lib/sw-base';
 import product from './product';
 
 function getCacheName(config) {
-    return `@sw-${config.name}@`;
+    return `@crater-${config.name}@`;
 }
 
 function addRoute(config) {

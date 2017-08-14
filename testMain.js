@@ -10,7 +10,7 @@ import testConfig from './test/product/test.conf';
 import precacheConfig from './test/product/precache.conf';
 
 function getCacheName(config) {
-    return `@sw-${config.name}@`;
+    return `@crater-${config.name}@`;
 }
 
 function addRoute(config) {

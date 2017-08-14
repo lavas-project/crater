@@ -1,8 +1,8 @@
 {
-  "name": "sw",
-  "version": "0.0.1",
+  "name": "crater",
+  "version": "1.0.0",
   "description": "generate service-worker.js for website",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "start": "node build/build.js",
     "build": "node build/build.js",
@@ -15,10 +15,22 @@
   },
   "keywords": [
     "service-worker",
-    "baidu",
-    "search"
+    "pwa"
   ],
-  "author": "wangyisheng",
+  "author": {
+    "name": "Wang Yisheng",
+    "email": "wangyisheng@outlook.com"
+  },
+  "contributors": [
+    {
+      "name": "Wang Yisheng",
+      "email": "wangyisheng@outlook.com"
+    },
+    {
+      "name": "Chen Qiushi",
+      "url": "qiushidev@gmail.com"
+    }
+  ],
   "license": "Apache-2.0",
   "engines": {
     "node": ">= 4.0.0",
