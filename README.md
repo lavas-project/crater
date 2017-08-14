@@ -6,7 +6,7 @@
 
 [PWA](https://lavas.baidu.com/doc) 是提升 WEB 站点体验的一种新方法，能提供用户原生应用的体验，其核心之一在于 [service-worker](https://lavas.baidu.com/doc/offline-and-cache-loading/service-worker/service-worker-introduction)。
 
-我们为开发者提供了一个快速的，免去开发的统一解决方案：crater。它能够为站点提供 service-worker 支持，用以缓存 js, css 等静态文件，提升 WEB 页面访问速度，符合 PWA 渐进的思想，从而提升用户体验，并且用户不需要进行任何相关的编码，只需要编写配置文件即可。
+我们为开发者提供了一个快速的，减少开发成本的统一解决方案：crater。它能够为站点提供 service-worker 支持，用以缓存 js, css 等静态文件，提升 WEB 页面访问速度，符合 PWA 渐进的思想，从而提升用户体验，并且用户不需要进行任何相关的编码，只需要编写配置文件即可。
 
 crater 模拟的运行环境是这样的：一个 WEB 站点中分为多个互不相关的模块（用 referrer 作为区分），每个模块可以控制自身的静态文件缓存策略，并编写成各自的配置文件。由 crater 生成统一的 service-worker 并交由站点注册，从而生效。
 
@@ -280,7 +280,7 @@ crater 中还集成了一些其他命令，如下：
 
 - npm run lint
 
-使用依赖的 `fecs` 进行代码检查。虽然 iCode 平台也集成了代码检查功能，但在提交前使用这条命令检查有助于及时发现并修改问题，避免多次提交评审。此外 `fecs` 的检查力度也要较 iCode 更强一些，建议开发者__在提交前确保通过代码风格检查__。
+使用依赖的 `fecs` 进行代码检查。
 
 - npm run test
 
