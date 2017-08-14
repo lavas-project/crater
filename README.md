@@ -16,7 +16,7 @@ crater 模拟的运行环境是这样的：一个 WEB 站点中分为多个互�
 
 ## 运行方式
 
-crater 会生成一份 `service-worker.js` 提供给 WEB 站点。其中包含每个模块的配置，告诉 `service-worker.js` 应该对__哪些静态资源__以__何种策略__进行缓存，此外也包括一些配置参数。如上所述，不同模块之间由 `request.referrer` 进行区分，防止互相干扰。
+crater 会生成一份 `service-worker.js` 提供给 WEB 站点。其中包含每个模块的配置，告诉 `service-worker.js` 应该对 __哪些静态资源__ 以 __何种策略__ 进行缓存，此外也包括一些配置参数。如上所述，不同模块之间由 `request.referrer` 进行区分，防止互相干扰。
 
 因为整个 WEB 站点使用同一个 `service-worker.js` ，并且注册的 `scope` 建议为 `/` ，因此需要将各个模块的缓存文件互相隔离开来，避免互相影响。目前 crater 允许每个模块缓存最多50个文件，超过这个限制之后，我们会采取 LRU 策略([Least Recently Used](https://en.wikipedia.org/wiki/Cache_replacement_policies#LRU))对缓存进行更替。当然这个值也是可以在配置项中进行调整的。
 
