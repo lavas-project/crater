@@ -1,7 +1,7 @@
 {
-  "name": "sfe-sw",
+  "name": "sw",
   "version": "0.0.1",
-  "description": "generate service-worker.js for baidu search",
+  "description": "generate service-worker.js for website",
   "main": "index.js",
   "scripts": {
     "start": "node build/build.js",
@@ -11,8 +11,7 @@
     "lint": "node ./node_modules/fecs/bin/fecs"
   },
   "repository": {
-    "type": "git",
-    "url": "ssh://wangyisheng@icode.baidu.com:8235/baidu/sfe/sw"
+    "url": ""
   },
   "keywords": [
     "service-worker",
@@ -20,7 +19,7 @@
     "search"
   ],
   "author": "wangyisheng",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "engines": {
     "node": ">= 4.0.0",
     "npm": ">= 3.0.0"
