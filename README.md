@@ -1,5 +1,7 @@
 # crater
 
+[![Build Status](https://img.shields.io/travis/lavas-project/crater.svg?style=flat-square)](https://travis-ci.org/lavas-project/crater)
+
 ![crater](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1502705187782&di=efa34e8b6d96e4dc8552b05fd26f2afe&imgtype=0&src=http%3A%2F%2Fs10.sinaimg.cn%2Fmiddle%2Fa02624d8xb76cd4403679%26690)
 
 ## 介绍
