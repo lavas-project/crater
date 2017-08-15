@@ -35,6 +35,11 @@ rm(config.build.outputPath, function (err) {
             chunkModules: false
         }) + '\n\n');
 
+        if (stats.compilation.errors && stats.compilation.errors.length !== 0) {
+            console.log(chalk.red('  Build Fail.\n'));
+            process.exit(1);
+        }
+
         console.log(chalk.cyan('  Build complete.\n'));
 
         process.exit();
