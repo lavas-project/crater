@@ -1,7 +1,7 @@
 /**
  * @file 测试策略和路由规则的配置文件
  * @author wangyisheng@outlook.com (wangyisheng)
- * @author chenqiushi@baidu.com (chenqiushi)
+ * @author tracy (qiushidev@gmail.com)
  */
 
 'use strict';
