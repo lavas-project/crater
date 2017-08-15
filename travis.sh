@@ -1,17 +1,21 @@
 #!/bin/bash
 echo "======================== check config ========================"
 
-result=$(node build/validate/index.js | xargs)
+node build/validate/index.js
 
-if [ "$result" != 'pass' ]
+EXCODE=$?
+if [ "$EXCODE" != "0" ]
 then
-    echo 'validate product config fail'
-    exit 1
+    exit $EXCODE
 fi
-
-echo 'validate product config complete'
 
 echo "======================== build ========================"
 npm run build
+
+EXCODE=$?
+if [ "$EXCODE" != "0" ]
+then
+    exit $EXCODE
+fi
 
 echo "======================== build complete ========================"
