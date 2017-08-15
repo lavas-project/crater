@@ -1,21 +1,24 @@
 #!/bin/bash
+
+runCommand() {
+    typeset cmd="$*"
+    typeset result
+
+    eval $cmd
+    result=$?
+
+    if [ $result != 0 ]; then
+        exit $result
+    fi
+}
+
 echo "======================== check config ========================"
 
-node build/validate/index.js
-
-EXCODE=$?
-if [ "$EXCODE" != "0" ]
-then
-    exit $EXCODE
-fi
+runCommand "node build/validate/index.js"
+runCommand "npm run lint"
 
 echo "======================== build ========================"
-npm run build
 
-EXCODE=$?
-if [ "$EXCODE" != "0" ]
-then
-    exit $EXCODE
-fi
+runCommand "npm run build"
 
 echo "======================== build complete ========================"

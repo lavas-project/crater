@@ -4,5 +4,6 @@ node_js:
   - "6"
 install:
   - npm install --production
+  - npm install fecs
 script:
   - sh travis.sh
