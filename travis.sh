@@ -1,14 +1,11 @@
 #!/bin/bash
 
 runCommand() {
-    typeset cmd="$*"
-    typeset result
+    eval "$*"
+    EXITCODE=$?
 
-    eval $cmd
-    result=$?
-
-    if [ $result != 0 ]; then
-        exit $result
+    if [ $EXITCODE != 0 ]; then
+        exit $EXITCODE
     fi
 }
 
