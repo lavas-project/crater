@@ -54,7 +54,7 @@ function addPrecache(config) {
 }
 
 Object.keys(product).forEach(name => {
-    let config = product[name];
+    le config = product[name];
 
     addPrecache(config);
     addRoute(config);
