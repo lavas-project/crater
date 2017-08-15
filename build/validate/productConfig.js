@@ -17,6 +17,7 @@ function print(message) {
 
 function printError(message) {
     spinner.fail(chalk.red(message));
+    process.exit(1);
 }
 
 function loadConfigs() {
@@ -36,8 +37,8 @@ async function checkConfig() {
     if (!Array.isArray(configs) || configs.length === 0) {
         printError('product/*.conf.js cannot be empty');
     }
-    else if (isSingleConfigValid(configs) && isMultiConfigValid(configs)) {
-        process.stdout.write('pass');
+    else {
+        isSingleConfigValid(configs) && isMultiConfigValid(configs);
     }
 }
 
