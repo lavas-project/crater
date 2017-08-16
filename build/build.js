@@ -3,10 +3,6 @@
  * @author wangyisheng@outlook.com (wangyisheng)
  */
 
-/* eslint-disable no-console */
-
-// process.env.NODE_ENV = 'production';
-
 var ora = require('ora');
 var rm = require('rimraf');
 var chalk = require('chalk');
@@ -18,15 +14,18 @@ var oraInfo = process.env.NODE_ENV === 'testing' ? 'Testing' : 'Production';
 var spinner = ora('building for ' + oraInfo + '...');
 spinner.start();
 
+// 删除上一次的输出目录
 rm(config.build.outputPath, function (err) {
     if (err) {
         throw err;
     }
+    // webpack编译
     webpack(webpackConfig, function (err, stats) {
         spinner.stop();
         if (err) {
             throw err;
         }
+
         process.stdout.write(stats.toString({
             colors: true,
             modules: false,

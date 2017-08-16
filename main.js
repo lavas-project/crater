@@ -8,10 +8,21 @@
 import sw from './lib/sw-base';
 import product from './product';
 
+/**
+ * 获取缓存名称
+ *
+ * @param {Object} config 配置对象
+ * @return {string} 缓存名称
+ */
 function getCacheName(config) {
     return `@crater-${config.name}@`;
 }
 
+/**
+ * 添加缓存路由规则
+ *
+ * @param {Object} config 配置对象
+ */
 function addRoute(config) {
     let cacheName = getCacheName(config);
     let {referrerPattern, options} = config;
@@ -36,6 +47,7 @@ function addRoute(config) {
         options.cache.name = cacheName;
     }
 
+    // 遍历config的routers，逐条添加到系统中
     config.routers.forEach(router => {
         let {method = 'all', urlPattern, strategy} = router;
 
@@ -47,12 +59,18 @@ function addRoute(config) {
     });
 }
 
+/**
+ * 添加预缓存文件
+ *
+ * @param {Object} config 配置文件
+ */
 function addPrecache(config) {
     let cacheName = getCacheName(config);
 
     sw.precache(cacheName, config.precache);
 }
 
+// 加载全部配置，每个都添加路由规则和预缓存
 Object.keys(product).forEach(name => {
     let config = product[name];
 
