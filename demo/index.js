@@ -5,10 +5,6 @@ app.get('/', function(req, res){
   res.sendfile(__dirname + '/public/index.html');
 });
 
-app.get('/news', function(req, res){
-  res.sendfile(__dirname + '/public/index.html');
-});
-
 app.get('/test', function(req, res){
   res.sendfile(__dirname + '/public/index.html');
 });

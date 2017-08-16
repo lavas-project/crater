@@ -3086,7 +3086,7 @@ __webpack_require__(31)('observable');
 /**
  * @file 测试策略和路由规则的配置文件
  * @author wangyisheng@outlook.com (wangyisheng)
- * @author chenqiushi@baidu.com (chenqiushi)
+ * @author tracy (qiushidev@gmail.com)
  */
 
 
@@ -3164,10 +3164,10 @@ __webpack_require__(31)('observable');
         // for maxAge, maxEntries 配置项
         {
             method: 'get',
-            urlPattern: /test\/data\/files\/text-\d\.txt$/,
+            urlPattern: /test\/data\/files\/text-\d\.js$/,
             strategy: 'networkFirst',
             validate: [{
-                url: '/test/data/files/text-1.txt'
+                url: '/test/data/files/text-1.js'
             }]
         },
 

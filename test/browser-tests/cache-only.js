@@ -1,6 +1,6 @@
 /**
  * @file cache-only 单测
- * @author chenqiushi (chenqiushi@baidu.com)
+ * @author tracy (qiushidev@gmail.com)
  */
 
 /* eslint-env browser, mocha */
