@@ -20,7 +20,82 @@ crater 会根据根目录下的 `product` 目录中的配置文件生成一份 `
 
 ## 使用方式
 
-如何使用 crater 为你的站点生成 `service-worker.js` 以及如何注册生效，请参考 Wiki 的[使用方法](https://github.com/lavas-project/crater/wiki/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)部分
+开发者将代码 clone 到本地后有 __三__ 个步骤需要进行：
+
+### 编写配置文件
+
+在 `product` 目录下编写至少一个配置文件，一个最简单的配置文件示例如下：
+
+```javascript
+'use strict';
+
+export default {
+
+    // 模块名称（不可重复）
+    name: 'pageSearch',
+
+    // referrer规则
+    referrerPattern: /\/s\?/,
+
+    // 可通过验证的referrer
+    validateReferrer: 'https://m.baidu.com/s?word=123',
+
+    routers: [
+        {
+            // HTTP方法匹配，可选值'get', 'post', 'put', 'delete', 'all'
+            method: 'get',
+            // 静态文件URL匹配规则
+            urlPattern: /se\/static\/(js|pmd|css)\/.*(css|js)$/,
+            // 缓存策略，可选值'networkFirst', 'networkOnly', 'cacheFirst', 'cacheOnly', 'fastest'
+            strategy: 'networkFirst',
+            // 可通过验证的url
+            validate: [{
+                url: '/se/static/js/uiamd/bdbox/follow_4ff41a2.js'
+            }]
+        }
+    ]
+};
+```
+
+这里包含了一个配置文件最基本的三个部分： `name`, `urlPattern`, `routers`。
+
+1. `name` 用以区分各个模块，因此不能重复。最终的缓存名称会命名为 `@crater-${name}`
+2. `urlPattern` 用以匹配每个资源请求的 referrer 来决定使用哪个配置文件
+3. `routers` 用以列出所有匹配规则和缓存策略，供 `fetch` 阶段逐个匹配并应用策略
+
+### 运行构建命令
+
+在编写配置文件完成后，还需要运行两条命令：
+
+1. `npm run validate`
+
+    对配置文件进行校验检查
+
+2. `npm run build` 或者 `npm start`
+
+    构建生成 `service-worker-[hash:8].js`，位于目录 `dist` 下。
+
+__注意__：为了区分每次打包结果，在生成的最终文件中添加了 `hash`。是否需要重命名脚本视具体情况而定，下文将统一使用 `service-worker.js` 来指代构建结果文件。
+
+### 注册 service worker
+
+在站点页面添加如下代码即可完成注册：
+
+```javascript
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js').then(function (registration) {
+        // registration was successful
+        console.log('service worker registration successful with scope ', registration.scope);
+    }).catch(function (err) {
+        // registration failed
+        console.log(err);
+    });
+}
+```
+
+### 更多使用信息
+
+更多的使用信息（包括配置文件详解和其他运行命令）可以参考 Wiki 的[使用信息](https://github.com/lavas-project/crater/wiki/%E4%BD%BF%E7%94%A8%E4%BF%A1%E6%81%AF)部分
 
 ## 设计思路
 
