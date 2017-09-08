@@ -16,7 +16,7 @@ module.exports = {
         ['serviceworker-cache-polyfill', resolve('main.js')],
     output: {
         path: config.build.outputPath,
-        filename: isTest ? 'service-worker.js' : 'service-worker-[hash:8].js'
+        filename: isTest ? 'service-worker.js' : 'service-worker.js'
     },
     devtool: config.build.productionSourceMap ? '#source-map' : false,
     module: {

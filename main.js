@@ -6,7 +6,13 @@
 'use strict';
 
 import sw from './lib/sw-base';
-import product from './product';
+
+function requireAll(requireContext) {
+    return requireContext.keys().map(requireContext);
+}
+
+// import product/*
+const product = requireAll(require.context('./product', true, /^\.\/.*\.js$/));
 
 /**
  * 获取缓存名称
