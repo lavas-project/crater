@@ -5,9 +5,10 @@
 
 'use strict';
 
+import path from 'path';
 import ora from 'ora';
 import chalk from 'chalk';
-import product from '../../product';
+import glob from 'glob';
 
 const spinner = ora('Validating product config files').start();
 
@@ -23,9 +24,12 @@ function printError(message) {
 function loadConfigs() {
     let configs = [];
 
-    Object.keys(product).forEach(name => {
-        configs.push(product[name]);
-        print(`load ${name} config complete`);
+    let productsPath = glob.sync(path.resolve(__dirname, '../../product/*.js'));
+    productsPath.forEach(productPath => {
+        let product = require(productPath).default;
+
+        configs.push(product);
+        print(`load ${product.name} config complete`);
     });
 
     return configs;
@@ -34,10 +38,7 @@ function loadConfigs() {
 async function checkConfig() {
     let configs = loadConfigs();
 
-    if (!Array.isArray(configs) || configs.length === 0) {
-        printError('product/*.conf.js cannot be empty');
-    }
-    else {
+    if (Array.isArray(configs) && configs.length !== 0) {
         isSingleConfigValid(configs) && isMultiConfigValid(configs);
     }
 }
